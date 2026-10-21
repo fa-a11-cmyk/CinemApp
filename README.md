@@ -133,4 +133,4 @@ Pour faciliter l'audit immédiat de l'application sans étape d'inscription pré
 - **Email :** `fatma.adel@example.com`
 - **Mot de passe :** `password123`
 
-*(L'inscription de nouveaux comptes est opérationnelle et fonctionnelle directement depuis l'interface).*
+
