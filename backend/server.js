@@ -21,6 +21,33 @@ app.use(cors({
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
+// Root API Welcome & Documentation endpoint
+app.get(['/', '/api'], (req, res) => {
+  res.status(200).json({
+    success: true,
+    message: 'Bienvenue sur l\'API CinemApp — Développée par Fatma Adel',
+    documentation: 'Consultez le README.md pour les détails complets de l\'architecture',
+    frontendUrl: process.env.CLIENT_URL || 'http://localhost:5173',
+    endpoints: {
+      health: 'GET /api/health',
+      auth: {
+        register: 'POST /api/auth/register',
+        login: 'POST /api/auth/login',
+        me: 'GET /api/auth/me'
+      },
+      movies: {
+        search: 'GET /api/movies/search?q=batman',
+        details: 'GET /api/movies/:id'
+      },
+      favorites: {
+        list: 'GET /api/favorites',
+        add: 'POST /api/favorites',
+        remove: 'DELETE /api/favorites/:imdbID'
+      }
+    }
+  });
+});
+
 // Health check endpoint
 app.get('/api/health', (req, res) => {
   res.status(200).json({

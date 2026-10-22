@@ -38,7 +38,6 @@ export function Navbar({ activeTab, setActiveTab }) {
             <Film size={22} />
           </div>
           <span>CinemApp</span>
-          <span className="badge-tag">Test Full Stack</span>
         </div>
 
         {/* Navigation Tabs */}
